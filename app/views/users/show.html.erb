@@ -1,0 +1,23 @@
+<h2>
+  <%= @user.name %> <br>
+</h2>
+<h3>Recipes:</h3>
+<ul>
+  <% @user.recipes.each do |r| %>
+    <li>
+      <%= link_to r.name, recipe_path(r) %>
+    </li>
+    <% end %>
+</ul>
+<br>
+<h3>Allergies:</h3>
+  <ul>
+    <% @user.allergic_to.each do |ingredient| %>
+      <li>
+        <%= link_to ingredient.name, ingredient_path(ingredient) %>
+      </li>
+    <% end %>
+  </ul>
+<br>
+<%= link_to "Delete User", user_path(@user), method: "DELETE" %>
+<%= link_to "Edit User", edit_user_path(@user) %>

@@ -1,0 +1,17 @@
+<h2 style= "text-align:center;"> Ingredients</h2>
+<table>
+    <tr>
+      <th>Allergic</th>
+      <th>Ingredient Name</th>
+    </tr>
+  <% @ingredients.each do |ingredient| %>
+    <tr>
+      <th>
+        <%= ingredient.allergic_count %>
+      </th> 
+      <th style= "text-align:justify;">
+        <%= link_to ingredient.name, ingredient_path(ingredient)%>
+      </th>
+    </tr>
+  <%end%>  
+</table>

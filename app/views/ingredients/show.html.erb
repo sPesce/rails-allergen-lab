@@ -1,0 +1,8 @@
+<h2 style="text-align: justify;">
+  <%= "Ingredient: #{@ingredient.name}"%>
+</h2>
+<h3>Associated Recipes: </h3>
+<% @ingredient.recipes.each do |rec| %>
+  <%= link_to rec.name, recipe_path(rec) %>
+<% end %>
+<%= %>

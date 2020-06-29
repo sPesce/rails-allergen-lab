@@ -1,8 +1,8 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only:[]
+  before_action :set_ingredient, only: [:show,:edit,:update,:destroy]
 
   def index
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.order_by_allergy_count
   end
 
   def show

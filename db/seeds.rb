@@ -24,7 +24,12 @@ egg = Ingredient.create(name: "Egg")
 recipe.ingredients << egg
 
 user = User.create(name: "Chef Bob")
-recipe.user = user
+user.recipes << recipe
 carrots = Ingredient.create(name: "Carrots")
 user.allergic_to << carrots
+
+15.times do
+  Ingredient.create(name: Faker::Food.ingredient)
+end
+
 
